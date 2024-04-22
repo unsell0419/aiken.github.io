@@ -73,7 +73,7 @@
 
 
                         <div class="home__data">
-                            <h1 class="home__title">Hi, I'am Aiken</h1>
+                            <h1 class="home__title" id="typewriter"></h1>
                             <h3 class="home__subtitle">220211060032</h3>
                             <p class="home__description">Tugas 2 CSS Pemrogaran Web</p>
                            
@@ -97,43 +97,19 @@
                 <div class="swiper-wrapper">
     
         
-            <div class="portfolio__content grid ">
-                <img src="./packages/images/Artikel3.jpg" alt="" class="portfolio__img">
-
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">Matahari</h3>
-                    <p class="portfolio__description">Matahari adalah pusat tata surya kita, bintang raksasa yang bersinar karena reaksi nuklir dahsyat di intinya...</p>
-                    <a href="#" class="button button--flex button--small portfolio__button">
-                        Selengkapnya
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-
-                <img src="./packages/images/Artikel1.jpg" alt="" class="portfolio__img">
+            <div class="portfolio__content grid " id="blogContainer">
                 
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">Bumi</h3>
-                    <p class="portfolio__description">Bumi, planet ketiga dari Matahari, menonjol sebagai satu-satunya planet yang diketahui mendukung kehidupan....</p>
-                    <a href="#" class="button button--flex button--small portfolio__button">
-                        Selengkapnya
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
-
-                <img src="./packages/images/Artikel2.jpg" alt="" class="portfolio__img">
-                
-                <div class="portfolio_">
-                    <h3 class="portfolio__title">Saturnus</h3>
-                    <p class="portfolio__description">Bertahta sebagai planet keenam dari Matahari, Saturnus mencuri perhatian dengan cincin es dan debu yang spektakuler...</p>
-                    <a href="#" class="button button--flex button--small portfolio__button">
-                        Selengkapnya
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </a>
-                </div>
             </div>
+            
+           
                 </div>
 
-            
+            <div class=" section__title" style="padding-top: 30px;">
+                <a class="button button--flex button--small portfolio__button" onclick="loadBlog()" id="loadBlogButton" href="#blog">Muat Artikel</a>
+                <a class="button button--flex button--small portfolio__button" onclick="previousBlog()" id="previousBlogButton" style="display:none"
+                    href="#blog">Sebelumnya</a>
+                <a class="button button--flex button--small portfolio__button" onclick="nextBlog()" id="nextBlogButton" style="display:none" href="#blog">Selanjutnya</a>
+            </div>
         
         </div>
 
@@ -148,18 +124,20 @@
                 <div class="swiper-wrapper">
         
         
-                    <div class="portfolio__content grid ">
-                        <img src="./packages/images/Gambar1.jpg" alt="" class="portfolio__img">
-                        <img src="./packages/images/Gambar2.jpeg" alt="" class="portfolio__img">
-                        <img src="./packages/images/Gambar3.jpg" alt="" class="portfolio__img">
-                        <img src="./packages/images/Gambar4.jpg" alt="" class="portfolio__img">
-                        <img src="./packages/images/Gambar5.jpg" alt="" class="portfolio__img">
-                        <img src="./packages/images/Gambar6jpeg.jpeg" alt="" class="portfolio__img">
+                    <div class="portfolio__content grid " id="galleryContainer">
+                        
                     </div>
                 </div>
         
         
-        
+        <div class="section__title" style="padding-top: 30px;">
+            <a class="button button--flex button--small portfolio__button" onclick="loadGallery()" id="loadGalleryButton"
+                href="#gallery">Muat Gambar</a>
+            <a class="button button--flex button--small portfolio__button" onclick="previousGallery()"
+                id="previousGalleryButton" style="display:none" href="#gallery">Sebelumnya</a>
+            <a class="button button--flex button--small portfolio__button" onclick="nextGallery()" id="nextGalleryButton"
+                style="display:none" href="#gallery">Selanjutnya</a>
+        </div>
             </div>
         
         </section>
@@ -230,6 +208,21 @@
             <p class="footer__copy" style="color: black;">&#169; Tugas Pemograman Web</p>
         </div>
     </footer>
+    <script src="script.js"></script>
+    <script>
+        var text = "Hi, I'am Aiken";
+        var speed = 100; // milliseconds per character
+
+        function typeWriter() {
+            if (text.length > 0) {
+                document.getElementById("typewriter").innerHTML += text.charAt(0);
+                text = text.substring(1);
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        typeWriter();
+    </script>
 
 </body>
 
